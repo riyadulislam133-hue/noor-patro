@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EAF2F4">
+<title>নূরের পাত্র</title>
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400..800&family=Hind+Siliguri:wght@400;500;600&display=swap">
+<style>
+:root {
+  /* Layout: one phone-width column. The glass jar is the single bold element; every section below it is a quiet rule-and-heading block with plain controls.
+     Light is the default. Dark mode is chosen only by the button, never by the system setting. */
+  --bg: #EAF2F4;
+  --surface: #F8FCFD;
+  --ink: #0F2B34;
+  --muted: #4A6770;
+  --line: #CBDDE2;
+  --accent: #0B6B7C;
+  --on-accent: #FFFFFF;
+  --accent-soft: #D5EBEF;
+  --good: #17754A;
+  --good-soft: #D9F0E4;
+  --alert: #A6401B;
+  --alert-soft: #FBE6DC;
+  --star: #7A4E00;
+  --star-soft: #FBEBC2;
+  --glass-fill: rgba(255, 255, 255, 0.55);
+  --glass-edge: #6FA3AF;
+  --glass-hi: rgba(255, 255, 255, 0.9);
+  --water-edge: rgba(15, 43, 52, 0.25);
+  --shadow: rgba(15, 43, 52, 0.16);
+  --f-display: "Anek Bangla", "Noto Sans Bengali", system-ui, sans-serif;
+  --f-body: "Hind Siliguri", "Noto Sans Bengali", system-ui, sans-serif;
+}
+:root[data-theme="dark"] {
+  --bg: #09151A;
+  --surface: #112329;
+  --ink: #E4F1F3;
+  --muted: #9DB9C0;
+  --line: #25424B;
+  --accent: #62C6D6;
+  --on-accent: #04222A;
+  --accent-soft: #16353D;
+  --good: #5FD39B;
+  --good-soft: #12372A;
+  --alert: #FFAE85;
+  --alert-soft: #3B2216;
+  --star: #FFD36B;
+  --star-soft: #3B2E0B;
+  --glass-fill: rgba(180, 225, 235, 0.1);
+  --glass-edge: #5B8F9B;
+  --glass-hi: rgba(255, 255, 255, 0.35);
+  --water-edge: rgba(255, 255, 255, 0.3);
+  --shadow: rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 8px 48px;
+  -webkit-tap-highlight-color: transparent;
+}
+.wrap { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+button, select, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+h1, h2 { font-family: var(--f-display); margin: 0; text-wrap: balance; }
+
+/* header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 6px; }
+.brand h1 { font-size: 1.55rem; font-weight: 700; line-height: 1.2; }
+.brand p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.theme-btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px;
+  border: 1px solid var(--line); background: var(--surface); border-radius: 999px; font-weight: 500; font-size: 0.9rem;
+}
+.theme-btn svg { width: 18px; height: 18px; flex: none; }
+
+/* date */
+.date { display: flex; align-items: center; gap: 14px; }
+.date .day { font-family: var(--f-display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--accent); min-width: 1.2em; }
+.date .mon { font-weight: 600; font-size: 1.05rem; line-height: 1.3; }
+.date .wk { color: var(--muted); font-size: 0.95rem; line-height: 1.3; }
+
+/* stage */
+.stage {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: radial-gradient(120% 70% at 50% 0%, var(--accent-soft), transparent 75%);
+  border-radius: 28px; padding: 8px 0 4px;
+}
+#jar { width: min(78vw, 340px); height: auto; display: block; overflow: visible; }
+.glassFill { fill: var(--glass-fill); }
+.glassEdge { fill: none; stroke: var(--glass-edge); stroke-width: 3; stroke-linecap: round; }
+.rim { fill: none; stroke: var(--glass-edge); stroke-width: 3; }
+.hi { fill: none; stroke: var(--glass-hi); stroke-width: 5; stroke-linecap: round; }
+.shadowEl { fill: var(--shadow); }
+.wp { fill-opacity: 0.92; stroke: var(--water-edge); stroke-width: 1.2; }
+.wg0 { animation: drift 6s linear infinite; }
+.wg1 { animation: drift 8s linear infinite reverse; }
+.wg2 { animation: drift 5s linear infinite; }
+@keyframes drift { to { transform: translateX(100px); } }
+.bub { fill: rgba(255, 255, 255, 0.75); stroke: rgba(255, 255, 255, 0.9); stroke-width: 0.6; animation: rise 1.6s ease-out forwards; }
+@keyframes rise { from { transform: translateY(0); opacity: 0.95; } to { transform: translateY(calc(var(--rise) * -1)); opacity: 0; } }
+.count { text-align: center; line-height: 1.05; }
+.count .lbl { display: block; color: var(--muted); font-size: 0.9rem; margin-bottom: 2px; }
+.count output { display: block; font-family: var(--f-display); font-weight: 800; font-size: 4.2rem; letter-spacing: -0.01em; }
+.count output.pop { animation: pop 0.25s ease-out; }
+@keyframes pop { 50% { transform: scale(1.06); } }
+
+.goal { width: 100%; padding: 12px 4px 4px; text-align: center; }
+.goal .msg { font-weight: 600; font-size: 1.02rem; }
+.goal .sub { color: var(--muted); font-size: 0.92rem; }
+.bar { height: 10px; border-radius: 999px; background: var(--line); overflow: hidden; margin: 10px 0 6px; }
+.bar i { display: block; height: 100%; background: var(--accent); border-radius: 999px; transition: width 0.4s ease; }
+.goal.done .msg { color: var(--good); }
+.goal.done .bar i { background: var(--good); }
+.goal.done { background: var(--good-soft); border-radius: 18px; padding: 14px 12px; }
+
+/* sections */
+section.blk { display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--line); padding-top: 18px; }
+section.blk h2 { font-size: 1.15rem; font-weight: 700; }
+.note { margin: 0; color: var(--muted); font-size: 0.88rem; }
+.btn {
+  min-height: 52px; padding: 0 10px; border: 1px solid var(--line); background: var(--surface);
+  border-radius: 14px; font-weight: 600; font-size: 1.05rem; font-family: var(--f-display);
+}
+.btn:active { transform: scale(0.97); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn[disabled] { opacity: 0.45; cursor: default; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1.6fr; gap: 8px; }
+.btn.minus { color: var(--alert); }
+.btn.small { font-family: var(--f-body); font-size: 0.95rem; font-weight: 500; }
+
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.field { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 140px; }
+.field label { font-size: 0.85rem; color: var(--muted); }
+select {
+  min-height: 48px; padding: 0 12px; border: 1px solid var(--line); background: var(--surface);
+  border-radius: 12px; width: 100%;
+}
+.voice-btn { flex: 1 1 200px; min-height: 52px; font-family: var(--f-display); font-weight: 600; font-size: 1.05rem; border-radius: 14px; border: 1px solid var(--accent); background: var(--accent); color: var(--on-accent); padding: 0 14px; }
+.voice-btn.on { background: var(--alert-soft); color: var(--alert); border-color: var(--alert); }
+.vstatus { display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; min-height: 28px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); margin-top: 8px; flex: none; }
+.dot.live { background: var(--good); animation: pulse 1.2s ease-in-out infinite; }
+.dot.err { background: var(--alert); }
+@keyframes pulse { 50% { transform: scale(1.6); opacity: 0.5; } }
+.heard { color: var(--muted); font-size: 0.88rem; overflow-wrap: anywhere; min-height: 1.4em; }
+
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tile { border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 10px 8px; text-align: center; min-width: 0; }
+.tile .k { color: var(--muted); font-size: 0.82rem; }
+.tile .v { font-family: var(--f-display); font-weight: 700; font-size: 1.2rem; overflow-wrap: anywhere; line-height: 1.25; }
+details { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+summary { cursor: pointer; padding: 12px 14px; font-weight: 600; min-height: 44px; }
+.rec { padding: 0 14px 12px; display: flex; flex-direction: column; gap: 4px; }
+.rec h3 { font-family: var(--f-display); font-size: 0.95rem; margin: 10px 0 2px; color: var(--muted); font-weight: 600; }
+.rec .r { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: 0.95rem; }
+.rec .r span:nth-child(2) { font-weight: 600; text-align: right; }
+.rec .r small { grid-column: 1 / -1; color: var(--muted); font-size: 0.82rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip .sd { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--line); flex: none; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; padding: 4px 4px 2px; }
+.sw { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--line); padding: 0; }
+.sw[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent); }
+.custom { display: inline-flex; align-items: center; gap: 10px; font-size: 0.92rem; }
+.custom input { width: 44px; height: 44px; padding: 0; border: 2px solid var(--line); border-radius: 50%; background: none; }
+
+.switch { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; width: 100%; padding: 0 4px; background: none; border: 0; text-align: left; }
+.switch .tr { width: 52px; height: 30px; border-radius: 999px; background: var(--line); position: relative; flex: none; transition: background 0.2s; }
+.switch .tr::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 3px var(--shadow); transition: transform 0.2s; }
+.switch[aria-checked="true"] .tr { background: var(--accent); }
+.switch[aria-checked="true"] .tr::after { transform: translateX(22px); }
+
+.remind {
+  position: fixed; left: 0; right: 0; top: env(safe-area-inset-top, 0px); z-index: 30;
+  padding: 10px max(16px, env(safe-area-inset-left, 0px)) 0 max(16px, env(safe-area-inset-right, 0px));
+}
+.remind .in { max-width: 480px; margin: 0 auto; background: var(--alert-soft); color: var(--ink); border: 2px solid var(--alert); border-radius: 18px; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 8px 24px var(--shadow); }
+.remind strong { font-family: var(--f-display); font-size: 1.15rem; color: var(--alert); }
+.foot { text-align: center; color: var(--muted); font-size: 0.82rem; }
+
+/* custom amount + date list */
+.amt-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
+.amt-row input, .num-in {
+  min-height: 52px; min-width: 0; padding: 0 14px; border: 1px solid var(--line); background: var(--surface);
+  border-radius: 14px; font-size: 1.1rem; font-family: var(--f-display); width: 100%;
+}
+.custom-add label.lb, .pastform label { font-size: 0.9rem; color: var(--muted); display: block; margin-bottom: 6px; }
+.custom-add { display: flex; flex-direction: column; gap: 6px; }
+.days { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.drow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.drow .dd { font-weight: 600; }
+.drow .dw { color: var(--muted); font-size: 0.85rem; }
+.drow .dn { font-family: var(--f-display); font-weight: 700; font-size: 1.25rem; text-align: right; }
+.dtag { font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.dtag.good { color: var(--good); }
+.dtag.star { color: var(--star); background: var(--star-soft); padding: 2px 10px; border-radius: 999px; justify-self: start; }
+.drow .ed { min-height: 40px; padding: 0 14px; justify-self: end; }
+.drow.editing { grid-template-columns: 1fr; gap: 8px; }
+.editbar { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
+.derr { color: var(--alert); font-size: 0.88rem; }
+.pastform { display: flex; flex-direction: column; gap: 10px; padding: 0 14px 14px; }
+.pastform input[type="date"] { min-height: 52px; padding: 0 12px; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; width: 100%; font-size: 1rem; }
+@media (prefers-reduced-motion: reduce) {
+  .wg0, .wg1, .wg2, .bub, .dot.live, .count output.pop { animation: none; }
+  .bar i { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="remind" class="remind" role="alert" hidden>
+  <div class="in">
+    <strong>রিয়াদ স্যার, টার্গেট থেকে দূরে চলে যাবেন না</strong>
+    <span id="remindSub" class="note"></span>
+    <button id="remindOk" class="btn primary" type="button">ঠিক আছে</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>নূরের পাত্র</h1>
+      <p>আস্তাগফিরুল্লাহ গণনা · ভার্সন ২</p>
+    </div>
+    <button id="themeBtn" class="theme-btn" type="button" aria-label="ডার্ক মোড চালু করুন">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path id="themeIcon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <span id="themeTxt">ডার্ক মোড</span>
+    </button>
+  </header>
+
+  <div class="date" aria-label="আজকের তারিখ">
+    <div class="day" id="dayNum">৯</div>
+    <div>
+      <div class="mon" id="monYear">নভেম্বর ২০২৬</div>
+      <div class="wk" id="weekday">সোমবার</div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <svg id="jar" viewBox="0 0 300 300" role="img" aria-label="তিন স্তরের রঙিন পানি ভরা গোল কাচের পাত্র">
+      <defs>
+        <clipPath id="bowlClip"><path d="M104 34 L104 51.2 A120 120 0 1 0 196 51.2 L196 34 Z"/></clipPath>
+      </defs>
+      <ellipse class="shadowEl" cx="150" cy="291" rx="84" ry="6"/>
+      <path class="glassFill" d="M104 34 L104 51.2 A120 120 0 1 0 196 51.2 L196 34 Z"/>
+      <g clip-path="url(#bowlClip)">
+        <g id="layers"></g>
+        <g id="bubbles"></g>
+      </g>
+      <path class="glassEdge" d="M196 51.2 A120 120 0 1 1 104 51.2"/>
+      <path class="rim" d="M104 51.2 V34 M196 51.2 V34"/>
+      <ellipse class="rim" cx="150" cy="34" rx="46" ry="6"/>
+      <path class="hi" d="M58 150 A104 104 0 0 1 96 90"/>
+      <circle cx="106" cy="76" r="3.2" fill="var(--glass-hi)"/>
+    </svg>
+    <div class="count"><span class="lbl">আজকের গণনা</span><output id="countNum">০</output></div>
+    <div id="goal" class="goal">
+      <div class="msg" id="goalMsg"></div>
+      <div class="bar" aria-hidden="true"><i id="goalBar"></i></div>
+      <div class="sub" id="goalSub"></div>
+    </div>
+  </div>
+
+  <section class="blk" aria-labelledby="h-manual">
+    <h2 id="h-manual">হাতে যোগ করুন</h2>
+    <div class="grid4">
+      <button class="btn primary" type="button" data-add="1">+১</button>
+      <button class="btn" type="button" data-add="20">+২০</button>
+      <button class="btn" type="button" data-add="40">+৪০</button>
+      <button class="btn" type="button" data-add="60">+৬০</button>
+    </div>
+    <div class="grid3">
+      <button class="btn minus" type="button" data-add="-1">−১</button>
+      <button class="btn minus" type="button" data-add="-20">−২০</button>
+      <button class="btn small" id="undoBtn" type="button" disabled>শেষ কাজ ফিরিয়ে নিন</button>
+    </div>
+    <div class="custom-add">
+      <label class="lb" for="amtIn">নিজে সংখ্যা লিখুন</label>
+      <div class="amt-row">
+        <input id="amtIn" type="text" inputmode="numeric" autocomplete="off" placeholder="যেমন ৭২ বা ৫০০" aria-describedby="amtMsg">
+        <button id="amtAdd" class="btn primary" type="button">যোগ করুন</button>
+        <button id="amtSub" class="btn minus" type="button">কমান</button>
+      </div>
+      <p class="note" id="amtMsg" aria-live="polite"></p>
+    </div>
+    <p class="note">ভুল হলে −১ বা −২০ চাপুন। আঙুলের গিঁটে ২০ করে গুনলে +২০ চাপুন।</p>
+  </section>
+
+  <section class="blk" aria-labelledby="h-voice">
+    <h2 id="h-voice">মুখে বলে গুনুন</h2>
+    <div class="row">
+      <div class="field">
+        <label for="langSel">ভাষা</label>
+        <select id="langSel">
+          <option value="bn-BD">বাংলা</option>
+          <option value="ar-SA">আরবি</option>
+        </select>
+      </div>
+      <button id="voiceBtn" class="voice-btn" type="button">শোনা শুরু করুন</button>
+    </div>
+    <div class="vstatus"><span id="vdot" class="dot"></span><span id="vstatus">বন্ধ আছে। শুরু করলে আপনি যতবার আস্তাগফিরুল্লাহ বলবেন, নিজে থেকে গুনবে।</span></div>
+    <div class="heard" id="heard" aria-live="off"></div>
+    <p class="note">ফোনের ক্রোমে ইন্টারনেট ও মাইক্রোফোনের অনুমতি লাগবে। খুব দ্রুত বললে কিছু শব্দ মিলতে নাও পারে, তাই যোগ-বিয়োগের বোতাম আছে।</p>
+  </section>
+
+  <section class="blk" aria-labelledby="h-rec">
+    <h2 id="h-rec">আমার রেকর্ড</h2>
+    <div class="tiles">
+      <div class="tile"><div class="k">এই মাস</div><div class="v" id="tMonth">০</div></div>
+      <div class="tile"><div class="k">এই বছর</div><div class="v" id="tYear">০</div></div>
+      <div class="tile"><div class="k">সারাজীবন</div><div class="v" id="tLife">০</div></div>
+    </div>
+    <details>
+      <summary>মাস ও বছর ধরে হিসাব</summary>
+      <div class="rec" id="recList"></div>
+    </details>
+    <p class="note" id="saveNote">ডেটা এই ফোনের ব্রাউজারে সংরক্ষিত হয়।</p>
+  </section>
+
+  <section class="blk" aria-labelledby="h-days">
+    <h2 id="h-days">তারিখ অনুযায়ী তালিকা</h2>
+    <p class="note" id="dayStat"></p>
+    <ul class="days" id="dayList"></ul>
+    <button id="dayMore" class="btn small" type="button" hidden>সব তারিখ দেখান</button>
+    <details>
+      <summary>পুরোনো তারিখ যোগ বা ঠিক করুন</summary>
+      <div class="pastform">
+        <div><label for="pastDate">তারিখ</label><input type="date" id="pastDate"></div>
+        <div><label for="pastAmt">ওই দিন মোট কত বার পড়েছেন</label><input class="num-in" id="pastAmt" type="text" inputmode="numeric" autocomplete="off" placeholder="যেমন ৪৩২৬"></div>
+        <button id="pastSave" class="btn primary" type="button">সংরক্ষণ করুন</button>
+        <p class="note" id="pastMsg" aria-live="polite">ওই তারিখে আগে কিছু থাকলে নতুন সংখ্যা দিয়ে বদলে যাবে। ০ লিখলে ওই তারিখ তালিকা থেকে মুছে যাবে।</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="blk" aria-labelledby="h-col">
+    <h2 id="h-col">পানির রঙ</h2>
+    <div class="chips" role="group" aria-label="রঙের ধরন">
+      <button class="chip" type="button" id="modeAll" aria-pressed="false">সব স্তর একসাথে</button>
+      <button class="chip" type="button" id="modeEach" aria-pressed="true">প্রতি স্তর আলাদা</button>
+    </div>
+    <div class="chips" id="layerChips" role="group" aria-label="কোন স্তরের রঙ বদলাবেন"></div>
+    <div class="swatches" id="swatches" role="group" aria-label="রঙ বেছে নিন"></div>
+    <label class="custom" for="customColor"><input type="color" id="customColor" value="#35b8b0"> নিজের পছন্দের রঙ</label>
+  </section>
+
+  <section class="blk" aria-labelledby="h-rem">
+    <h2 id="h-rem">রিমাইন্ডার</h2>
+    <div class="chips" id="remChips" role="group" aria-label="রিমাইন্ডারের ব্যবধান"></div>
+    <p class="note" id="remNote"></p>
+    <div class="row"><button class="btn small" id="remTest" type="button" style="padding:0 16px">রিমাইন্ডার পরীক্ষা করুন</button></div>
+    <p class="note">রিমাইন্ডার শুধু এই পাতা খোলা থাকলে বাজবে। পাতা বন্ধ থাকলে ফোনের টাইমার বা অ্যালার্ম ব্যবহার করুন।</p>
+  </section>
+
+  <section class="blk" aria-labelledby="h-scr">
+    <h2 id="h-scr">স্ক্রিন</h2>
+    <button class="switch" id="wlSwitch" type="button" role="switch" aria-checked="false">
+      <span>স্ক্রিন জাগিয়ে রাখুন<br><span class="note" id="wlNote">বন্ধ আছে</span></span>
+      <span class="tr" aria-hidden="true"></span>
+    </button>
+  </section>
+
+  <p class="foot">নূরের পাত্র · আজকের লক্ষ্য ১০,০০০</p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var TARGET = 10000;
+  var KEY = 'noor-patro-v2';
+  var D = '০১২৩৪৫৬৭৮৯';
+  var MONTHS = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+  var WEEK = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
+  var PALETTE = [
+    ['লাল', '#D93A3A'], ['হলুদ', '#F2C230'], ['আকাশি', '#5BC0EB'], ['ছাই', '#8A949B'],
+    ['কালো', '#1A1A1A'], ['সাদা', '#FFFFFF'], ['নীল', '#2B63D9'], ['সবুজ', '#2FAE6B'],
+    ['ফিরোজা', '#1FB5A8'], ['বেগুনি', '#8450D6'], ['গোলাপি', '#EE6FA3'], ['কমলা', '#F28A2E'],
+    ['বাদামি', '#8B5A3C'], ['মেরুন', '#7A1F3D'], ['সোনালি', '#D4A63A']
+  ];
+  var LAYER_NAMES = { 2: 'উপরের স্তর', 1: 'মাঝের স্তর', 0: 'নিচের স্তর' };
+  var INTERVALS = [[0, 'বন্ধ'], [15, '১৫ মিনিট'], [20, '২০ মিনিট'], [30, '৩০ মিনিট'], [60, '১ ঘণ্টা']];
+  var reduce = false;
+  try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+
+  function $(id) { return document.getElementById(id); }
+  function bnRaw(s) { return String(s).replace(/\d/g, function (d) { return D[d]; }); }
+  function bn(n) {
+    n = Math.round(n);
+    var s = String(Math.abs(n));
+    if (s.length > 3) {
+      var last = s.slice(-3), rest = s.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+      s = rest + ',' + last;
+    }
+    return (n < 0 ? '−' : '') + bnRaw(s);
+  }
+  function bnTime(ts) {
+    var d = new Date(ts), h = d.getHours(), m = d.getMinutes();
+    var part = h < 5 ? 'রাত' : h < 12 ? 'সকাল' : h < 15 ? 'দুপুর' : h < 18 ? 'বিকাল' : h < 20 ? 'সন্ধ্যা' : 'রাত';
+    return part + ' ' + bnRaw(h % 12 || 12) + ':' + bnRaw(String(m).padStart(2, '0'));
+  }
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function todayKey() { var d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+
+  /* ---------- state ---------- */
+  function defaults() {
+    return {
+      days: {},
+      set: { theme: 'light', lang: 'bn-BD', mode: 'each', base: '#35B8B0', layers: ['#1E88C8', '#35B8B0', '#8ED8E8'], active: 2, interval: 0 },
+      t: 0
+    };
+  }
+  function normalize(o) {
+    var b = defaults();
+    if (!o || typeof o !== 'object') return b;
+    if (o.days && typeof o.days === 'object') {
+      for (var k in o.days) { var v = Number(o.days[k]); if (/^\d{4}-\d{2}-\d{2}$/.test(k) && isFinite(v) && v > 0) b.days[k] = Math.floor(v); }
+    }
+    if (o.set && typeof o.set === 'object') {
+      var s = o.set;
+      if (s.theme === 'dark') b.set.theme = 'dark';
+      if (s.lang === 'ar-SA') b.set.lang = 'ar-SA';
+      if (s.mode === 'all') b.set.mode = 'all';
+      if (/^#[0-9a-fA-F]{6}$/.test(s.base || '')) b.set.base = s.base;
+      if (Array.isArray(s.layers) && s.layers.length === 3 && s.layers.every(function (c) { return /^#[0-9a-fA-F]{6}$/.test(c || ''); })) b.set.layers = s.layers.slice();
+      if (s.active === 0 || s.active === 1 || s.active === 2) b.set.active = s.active;
+      if ([0, 15, 20, 30, 60].indexOf(s.interval) >= 0) b.set.interval = s.interval;
+    }
+    b.t = Number(o.t) || 0;
+    return b;
+  }
+  var S = defaults();
+  try { var raw = localStorage.getItem(KEY); if (raw) S = normalize(JSON.parse(raw)); } catch (e) {}
+
+  var saveTimer = 0, cloudTimer = 0;
+  function persistLocal() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function save() {
+    S.t = Date.now();
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(persistLocal, 250);
+    scheduleCloud();
+  }
+  window.addEventListener('pagehide', function () { persistLocal(); });
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') { persistLocal(); pushCloud(); }
+  });
+
+  /* ---------- colour helpers ---------- */
+  function hex2rgb(h) { return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)]; }
+  function mix(a, b, t) {
+    var x = hex2rgb(a), y = hex2rgb(b);
+    return '#' + [0, 1, 2].map(function (i) { return pad(Math.round(x[i] + (y[i] - x[i]) * t).toString(16)); }).join('');
+  }
+  function layerColors() {
+    if (S.set.mode === 'all') return [mix(S.set.base, '#000000', 0.24), S.set.base, mix(S.set.base, '#ffffff', 0.28)];
+    return S.set.layers;
+  }
+
+  /* ---------- jar ---------- */
+  var NS = 'http://www.w3.org/2000/svg';
+  var TOP = 64, BOT = 284;
+  var lp = [];
+  [2, 1, 0].forEach(function (i) {
+    var g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'wg wg' + i);
+    var p = document.createElementNS(NS, 'path');
+    p.setAttribute('class', 'wp');
+    g.appendChild(p);
+    $('layers').appendChild(g);
+    lp[i] = p;
+  });
+  function wavePath(y, a) { return 'M-100 ' + y.toFixed(1) + 'q25 -' + a + ' 50 0 ' + 't50 0 '.repeat(11) + 'V330H-100Z'; }
+  var fCur = null, fTar = 0, raf = 0;
+  function drawJar(f) {
+    var yTop = BOT - (BOT - TOP) * f, hb = (BOT - yTop) / 3;
+    lp[2].setAttribute('d', wavePath(yTop, 4));
+    lp[1].setAttribute('d', wavePath(yTop + hb, 3.2));
+    lp[0].setAttribute('d', wavePath(yTop + 2 * hb, 2.6));
+  }
+  function paintColors() {
+    var c = layerColors();
+    for (var i = 0; i < 3; i++) lp[i].setAttribute('fill', c[i]);
+  }
+  function step() {
+    fCur += (fTar - fCur) * 0.12;
+    if (Math.abs(fTar - fCur) < 0.0008) { fCur = fTar; raf = 0; drawJar(fCur); return; }
+    drawJar(fCur);
+    raf = requestAnimationFrame(step);
+  }
+  function setLevel(f) {
+    fTar = f;
+    if (fCur === null || reduce) { fCur = f; drawJar(f); return; }
+    if (!raf) raf = requestAnimationFrame(step);
+  }
+  function bubbles(n) {
+    if (reduce) return;
+    var g = $('bubbles'), yTop = BOT - (BOT - TOP) * fTar;
+    n = Math.min(n, 5);
+    for (var i = 0; i < n; i++) {
+      var c = document.createElementNS(NS, 'circle');
+      var y = yTop + 24 + Math.random() * Math.max(10, BOT - yTop - 40);
+      c.setAttribute('class', 'bub');
+      c.setAttribute('cx', (95 + Math.random() * 110).toFixed(1));
+      c.setAttribute('cy', y.toFixed(1));
+      c.setAttribute('r', (2.5 + Math.random() * 3).toFixed(1));
+      c.style.setProperty('--rise', Math.max(12, y - yTop - 4).toFixed(0) + 'px');
+      c.style.animationDelay = (i * 90) + 'ms';
+      g.appendChild(c);
+      (function (el) { setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 2000); })(c);
+    }
+  }
+
+  /* ---------- counting ---------- */
+  var undo = [];
+  var celebrated = false;
+  function todayCount() { return S.days[todayKey()] || 0; }
+  function add(n, src) {
+    var key = todayKey(), cur = S.days[key] || 0, next = Math.max(0, cur + n), real = next - cur;
+    if (!real) return 0;
+    if (next === 0) delete S.days[key]; else S.days[key] = next;
+    if (src !== 'undo') { undo.push(real); if (undo.length > 60) undo.shift(); }
+    if (real > 0) {
+      bubbles(src === 'voice' ? 2 : Math.max(1, Math.min(5, Math.ceil(real / 20))));
+      try { if (src !== 'voice' && navigator.vibrate) navigator.vibrate(12); } catch (e) {}
+    }
+    renderCount(true);
+    renderRecords();
+    renderUndo();
+    save();
+    if (cur < TARGET && next >= TARGET) {
+      try { if (navigator.vibrate) navigator.vibrate([120, 60, 120, 60, 240]); } catch (e) {}
+    }
+    return real;
+  }
+  function renderUndo() { $('undoBtn').disabled = undo.length === 0; }
+  function renderCount(pop) {
+    var c = todayCount(), left = Math.max(0, TARGET - c);
+    var out = $('countNum');
+    out.textContent = bn(c);
+    if (pop && !reduce) { out.classList.remove('pop'); void out.offsetWidth; out.classList.add('pop'); }
+    var pct = Math.min(100, Math.floor(c / TARGET * 100));
+    $('goalBar').style.width = Math.min(100, c / TARGET * 100) + '%';
+    var goal = $('goal');
+    if (c >= TARGET) {
+      goal.classList.add('done');
+      $('goalMsg').textContent = 'অভিনন্দন, রিয়াদ স্যার! আজকের ' + bn(TARGET) + ' লক্ষ্য পূর্ণ হয়েছে।';
+      $('goalSub').textContent = c > TARGET ? 'লক্ষ্যের চেয়ে ' + bn(c - TARGET) + ' বেশি হয়েছে। আলহামদুলিল্লাহ।' : 'আলহামদুলিল্লাহ।';
+    } else {
+      goal.classList.remove('done');
+      $('goalMsg').textContent = 'আজ ' + bn(c) + ' হয়েছে, বাকি ' + bn(left);
+      $('goalSub').textContent = 'লক্ষ্য ' + bn(TARGET) + ' · ' + bnRaw(pct) + '% সম্পন্ন';
+    }
+    setLevel(0.06 + 0.94 * Math.min(1, c / TARGET));
+  }
+
+  /* ---------- date ---------- */
+  var shownKey = '';
+  function renderDate() {
+    var d = new Date();
+    $('dayNum').textContent = bnRaw(d.getDate());
+    $('monYear').textContent = MONTHS[d.getMonth()] + ' ' + bnRaw(d.getFullYear());
+    $('weekday').textContent = WEEK[d.getDay()];
+    shownKey = todayKey();
+  }
+  function checkDate() {
+    if (todayKey() !== shownKey) { $('pastDate').max = todayKey(); undo = []; renderDate(); renderCount(false); renderRecords(); renderUndo(); }
+  }
+  setInterval(checkDate, 15000);
+
+  /* ---------- records ---------- */
+  function renderRecords() {
+    var key = todayKey(), ym = key.slice(0, 7), yy = key.slice(0, 4), m = 0, y = 0, l = 0;
+    var years = {}, months = {}, met = {};
+    for (var k in S.days) {
+      var v = S.days[k];
+      l += v;
+      var yr = k.slice(0, 4), mo = k.slice(0, 7);
+      years[yr] = (years[yr] || 0) + v;
+      months[mo] = (months[mo] || 0) + v;
+      if (v >= TARGET) met[mo] = (met[mo] || 0) + 1;
+      if (yr === yy) y += v;
+      if (mo === ym) m += v;
+    }
+    $('tMonth').textContent = bn(m);
+    $('tYear').textContent = bn(y);
+    $('tLife').textContent = bn(l);
+    var box = $('recList');
+    box.textContent = '';
+    function h3(t) { var e = document.createElement('h3'); e.textContent = t; box.appendChild(e); }
+    function row(a, b, c) {
+      var r = document.createElement('div'); r.className = 'r';
+      var s1 = document.createElement('span'); s1.textContent = a;
+      var s2 = document.createElement('span'); s2.textContent = b;
+      r.appendChild(s1); r.appendChild(s2);
+      if (c) { var sm = document.createElement('small'); sm.textContent = c; r.appendChild(sm); }
+      box.appendChild(r);
+    }
+    var nowM = new Date().getMonth() + 1;
+    h3(bnRaw(yy) + ' সালের মাসগুলো');
+    for (var i = nowM; i >= 1; i--) {
+      var mk = yy + '-' + pad(i), tot = months[mk] || 0;
+      row(MONTHS[i - 1], bn(tot), tot ? 'লক্ষ্য পূর্ণ হয়েছে ' + bnRaw(met[mk] || 0) + ' দিন' : '');
+    }
+    h3('বছরভিত্তিক');
+    var ys = Object.keys(years).sort().reverse();
+    if (!ys.length) row(bnRaw(yy), bn(0));
+    ys.forEach(function (yr) { row(bnRaw(yr), bn(years[yr])); });
+    row('সারাজীবন', bn(l));
+    renderList();
+  }
+
+
+  /* ---------- custom amount ---------- */
+  function parseNum(str) {
+    var s = String(str).replace(/[০-৯]/g, function (d) { return D.indexOf(d); }).replace(/[,\s،]/g, '');
+    if (!/^\d+$/.test(s)) return null;
+    var n = parseInt(s, 10);
+    return (isFinite(n) && n <= 10000000) ? n : null;
+  }
+  function amtDo(sign) {
+    var inp = $('amtIn'), m = $('amtMsg'), n = parseNum(inp.value);
+    if (n === null || n === 0) { m.textContent = 'শুধু সংখ্যা লিখুন, যেমন ৭২ (সর্বোচ্চ ১,০০,০০,০০০)'; inp.focus(); return; }
+    var real = add(sign * n, 'manual');
+    if (sign > 0) m.textContent = bn(n) + ' যোগ হয়েছে। আজকের মোট ' + bn(todayCount());
+    else if (real === 0) m.textContent = 'আজকের গণনা আগেই ০ ছিল, কিছু কমেনি।';
+    else m.textContent = bn(-real) + ' কমানো হয়েছে।' + (-real < n ? ' আজকের গণনার বেশি কমানো যায় না, তাই ০ করা হয়েছে।' : '') + ' আজকের মোট ' + bn(todayCount());
+    inp.value = '';
+  }
+
+  /* ---------- date list ---------- */
+  var listAll = false, editKey = null, editVal = '', editErr = '', focusEdit = false;
+  function dateParts(k) { var p = k.split('-'); return { y: +p[0], m: +p[1], d: +p[2] }; }
+  function dayLabel(k) { var p = dateParts(k); return bnRaw(p.d) + ' ' + MONTHS[p.m - 1] + ' ' + bnRaw(p.y); }
+  function dayWeek(k) { var p = dateParts(k); return WEEK[new Date(p.y, p.m - 1, p.d).getDay()]; }
+  function setDay(k, n) {
+    if (n > 0) S.days[k] = n; else delete S.days[k];
+    if (k === todayKey()) undo = [];
+    editKey = null; editErr = '';
+    renderCount(false); renderRecords(); renderUndo(); save();
+  }
+  function mk(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+  function renderList() {
+    var ul = $('dayList');
+    var hadFocus = document.activeElement && document.activeElement.id === 'editIn';
+    ul.textContent = '';
+    var today = todayKey(), keys = Object.keys(S.days);
+    if (keys.indexOf(today) < 0) keys.push(today);
+    keys.sort().reverse();
+    var recorded = 0, met = 0, over = 0;
+    Object.keys(S.days).forEach(function (k) { recorded++; if (S.days[k] >= TARGET) met++; if (S.days[k] > TARGET) over++; });
+    $('dayStat').textContent = recorded
+      ? 'মোট ' + bnRaw(recorded) + ' দিনের রেকর্ড। লক্ষ্য পূর্ণ ' + bnRaw(met) + ' দিন, ' + bn(TARGET) + ' এর বেশি ' + bnRaw(over) + ' দিন।'
+      : 'এখনো কোনো রেকর্ড নেই। গণনা শুরু করলে তারিখ ধরে এখানে জমা হবে।';
+    var shown = listAll ? keys : keys.slice(0, 31);
+    shown.forEach(function (k) {
+      var n = S.days[k] || 0, li = mk('li', 'drow');
+      var main = mk('div', 'dmain');
+      main.appendChild(mk('div', 'dd', dayLabel(k)));
+      main.appendChild(mk('div', 'dw', dayWeek(k) + (k === today ? ' · আজ' : '')));
+      if (editKey === k) {
+        li.classList.add('editing');
+        li.appendChild(main);
+        var bar = mk('div', 'editbar');
+        var inp = mk('input', 'num-in'); inp.id = 'editIn'; inp.type = 'text'; inp.setAttribute('inputmode', 'numeric'); inp.setAttribute('autocomplete', 'off');
+        inp.setAttribute('aria-label', dayLabel(k) + ' তারিখে মোট কত বার');
+        inp.value = editVal;
+        inp.addEventListener('input', function () { editVal = inp.value; });
+        inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') saveEdit(k); else if (e.key === 'Escape') { editKey = null; editErr = ''; renderList(); } });
+        var ok = mk('button', 'btn primary small', 'রাখুন'); ok.type = 'button'; ok.addEventListener('click', function () { saveEdit(k); });
+        var no = mk('button', 'btn small', 'বাতিল'); no.type = 'button'; no.addEventListener('click', function () { editKey = null; editErr = ''; renderList(); });
+        bar.appendChild(inp); bar.appendChild(ok); bar.appendChild(no);
+        li.appendChild(bar);
+        if (editErr) { var er = mk('div', 'derr', editErr); er.setAttribute('role', 'alert'); li.appendChild(er); }
+      } else {
+        li.appendChild(main);
+        li.appendChild(mk('div', 'dn', bn(n)));
+        var tag;
+        if (n > TARGET) tag = mk('div', 'dtag star', '★ ' + bn(TARGET) + ' এর বেশি');
+        else if (n === TARGET) tag = mk('div', 'dtag good', '✓ লক্ষ্য পূর্ণ');
+        else tag = mk('div', 'dtag', n === 0 ? 'এখনো শুরু হয়নি' : 'বাকি ' + bn(TARGET - n));
+        li.appendChild(tag);
+        var ed = mk('button', 'btn small ed', 'ঠিক করুন'); ed.type = 'button';
+        ed.setAttribute('aria-label', dayLabel(k) + ' তারিখের সংখ্যা ঠিক করুন');
+        ed.addEventListener('click', function () { editKey = k; editVal = bnRaw(S.days[k] || 0); editErr = ''; focusEdit = true; renderList(); });
+        li.appendChild(ed);
+      }
+      ul.appendChild(li);
+    });
+    $('dayMore').hidden = listAll || keys.length <= 31;
+    if (focusEdit || (hadFocus && editKey)) { var ei = $('editIn'); if (ei) { ei.focus(); } focusEdit = false; }
+  }
+  function saveEdit(k) {
+    var n = parseNum(editVal);
+    if (n === null) { editErr = 'শুধু সংখ্যা লিখুন, যেমন ৪৩২৬। ০ লিখলে ওই তারিখ মুছে যাবে।'; focusEdit = true; renderList(); return; }
+    setDay(k, n);
+  }
+  function savePast() {
+    var k = $('pastDate').value, m = $('pastMsg'), n = parseNum($('pastAmt').value);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(k) || k > todayKey()) { m.textContent = 'আজ বা আগের একটা তারিখ বেছে নিন।'; return; }
+    if (n === null) { m.textContent = 'সংখ্যা লিখুন, যেমন ৪৩২৬। ০ লিখলে ওই তারিখ মুছে যাবে।'; return; }
+    var before = S.days[k];
+    setDay(k, n);
+    m.textContent = dayLabel(k) + ' এর সংখ্যা ' + bn(n) + ' করা হলো' + (before ? ' (আগে ছিল ' + bn(before) + ')' : '') + '।';
+    $('pastAmt').value = '';
+  }
+
+  /* ---------- voice ---------- */
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var rec = null, listening = false, restartT = 0, startedAt = 0, fastFails = 0, netFails = 0;
+  var last = { idx: -1, text: '', cnt: 0 };
+  var heardTotal = 0;
+  function countMatches(raw) {
+    var t = String(raw).normalize('NFC').toLowerCase(), n = 0, m;
+    var b = t.replace(/[্‌‍়\s]/g, '');
+    m = b.match(/[আঅ]সতাগ[ফভ][িীেো]?[রড়]ুল+া?হ?/g); if (m) n += m.length;
+    var a = t.replace(/[ً-ٰٟـ\s]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه');
+    m = a.match(/استغفرالله/g); if (m) n += m.length;
+    var e = t.replace(/[^a-z]/g, '');
+    m = e.match(/[ae]stag+h?f[ie]?r+u+l+a?h?/g); if (m) n += m.length;
+    return n;
+  }
+  function vstate(kind, text) {
+    $('vdot').className = 'dot' + (kind === 'live' ? ' live' : kind === 'err' ? ' err' : '');
+    $('vstatus').textContent = text;
+    var btn = $('voiceBtn');
+    btn.classList.toggle('on', listening);
+    btn.textContent = listening ? 'শোনা বন্ধ করুন' : 'শোনা শুরু করুন';
+  }
+  function onResult(ev) {
+    var gained = 0, res = ev.results;
+    for (var i = ev.resultIndex; i < res.length; i++) {
+      var txt = res[i][0] ? res[i][0].transcript : '';
+      var norm = txt.trim().toLowerCase(), c = countMatches(txt), delta = 0;
+      if (i === last.idx) { delta = Math.max(0, c - last.cnt); last.cnt = Math.max(last.cnt, c); last.text = norm; }
+      else if (last.cnt > 0 && norm.indexOf(last.text) === 0) { delta = Math.max(0, c - last.cnt); last = { idx: i, text: norm, cnt: Math.max(c, last.cnt) }; }
+      else { delta = c; last = { idx: i, text: norm, cnt: c }; }
+      gained += delta;
+      if (i === res.length - 1) $('heard').textContent = 'শুনেছি: ' + txt.trim().slice(-70);
+    }
+    if (gained > 0) { heardTotal += gained; add(gained, 'voice'); vstate('live', 'শুনছি… এই সেশনে মুখে গোনা হয়েছে ' + bn(heardTotal)); }
+  }
+  function makeRec() {
+    var r = new SR();
+    r.lang = S.set.lang; r.continuous = true; r.interimResults = true; r.maxAlternatives = 1;
+    r.onstart = function () { startedAt = Date.now(); vstate('live', heardTotal ? 'শুনছি… এই সেশনে মুখে গোনা হয়েছে ' + bn(heardTotal) : 'শুনছি… আস্তাগফিরুল্লাহ বলুন'); };
+    r.onresult = function (ev) { netFails = 0; onResult(ev); };
+    r.onerror = function (ev) {
+      var e = ev && ev.error;
+      if (e === 'not-allowed' || e === 'service-not-allowed') {
+        listening = false;
+        vstate('err', 'মাইক্রোফোনের অনুমতি পাওয়া যায়নি। এখানে ভয়েস চালু না হলে যোগ-বিয়োগের বোতাম ব্যবহার করুন, অথবা ব্রাউজারের সাইট সেটিংসে মাইক্রোফোন অনুমতি দিন।');
+      } else if (e === 'audio-capture') {
+        listening = false; vstate('err', 'মাইক্রোফোন পাওয়া যায়নি। মাইক্রোফোন ঠিক আছে কিনা দেখুন।');
+      } else if (e === 'language-not-supported') {
+        listening = false; vstate('err', 'এই ভাষা ফোনে সমর্থিত নয়। অন্য ভাষা বেছে নিন।');
+      } else if (e === 'network') {
+        netFails++;
+        if (netFails >= 3) { listening = false; vstate('err', 'ইন্টারনেট সংযোগ নেই, তাই ভয়েস গণনা থেমে গেছে। সংযোগ ফিরলে আবার শুরু করুন।'); }
+      }
+    };
+    r.onend = function () {
+      if (!listening) { vstate('idle', 'বন্ধ আছে।'); return; }
+      if (Date.now() - startedAt < 900) fastFails++; else fastFails = 0;
+      if (fastFails >= 6) { listening = false; vstate('err', 'ভয়েস শোনা চালু রাখা যাচ্ছে না। পাতাটি আবার খুলে চেষ্টা করুন।'); return; }
+      last = { idx: -1, text: '', cnt: 0 };
+      clearTimeout(restartT);
+      restartT = setTimeout(function () { if (listening) { try { r.start(); } catch (e) {} } }, 300);
+    };
+    return r;
+  }
+  function startVoice() {
+    if (!SR) { vstate('err', 'এই ব্রাউজারে ভয়েস রিকগনিশন নেই। ফোনে ক্রোম ব্রাউজারে খুলুন।'); return; }
+    listening = true; fastFails = 0; netFails = 0; last = { idx: -1, text: '', cnt: 0 };
+    rec = makeRec();
+    vstate('live', 'মাইক্রোফোন চালু হচ্ছে… অনুমতি চাইলে "অনুমতি দিন" চাপুন।');
+    try { rec.start(); } catch (e) { listening = false; vstate('err', 'ভয়েস শুরু করা যায়নি। আবার চেষ্টা করুন।'); return; }
+    if (!wlWanted) setWake(true);
+  }
+  function stopVoice() {
+    listening = false; clearTimeout(restartT);
+    try { if (rec) rec.stop(); } catch (e) {}
+    vstate('idle', 'বন্ধ আছে।');
+  }
+
+  /* ---------- wake lock ---------- */
+  var wl = null, wlWanted = false, wlMsg = 'বন্ধ আছে';
+  function renderWake() {
+    $('wlSwitch').setAttribute('aria-checked', wlWanted ? 'true' : 'false');
+    $('wlNote').textContent = wlMsg;
+  }
+  async function setWake(on) {
+    wlWanted = on;
+    if (!on) {
+      try { if (wl) await wl.release(); } catch (e) {}
+      wl = null; wlMsg = 'বন্ধ আছে'; renderWake(); return;
+    }
+    if (!('wakeLock' in navigator)) { wlWanted = false; wlMsg = 'এই ব্রাউজারে স্ক্রিন জাগিয়ে রাখা যাচ্ছে না'; renderWake(); return; }
+    try {
+      wl = await navigator.wakeLock.request('screen');
+      wl.addEventListener('release', function () { wl = null; if (wlWanted && document.visibilityState === 'visible') setWake(true); else if (wlWanted) { wlMsg = 'পাতা আবার খুললে চালু হবে'; renderWake(); } });
+      wlMsg = 'চালু আছে। স্ক্রিন বন্ধ হবে না';
+    } catch (e) { wlWanted = false; wlMsg = 'অনুমতি পাওয়া যায়নি। ফোনের ব্যাটারি সেভার বন্ধ করে দেখুন'; }
+    renderWake();
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') { checkDate(); if (wlWanted && !wl) setWake(true); }
+  });
+
+  /* ---------- reminders ---------- */
+  var nextAt = 0, ac = null, hideT = 0;
+  function unlockAudio() {
+    try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); } catch (e) {}
+  }
+  function beep() {
+    try {
+      unlockAudio(); if (!ac) return;
+      var t = ac.currentTime;
+      [660, 880, 660].forEach(function (f, i) {
+        var o = ac.createOscillator(), g = ac.createGain(), s = t + i * 0.3;
+        o.type = 'sine'; o.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, s); g.gain.linearRampToValueAtTime(0.3, s + 0.04); g.gain.exponentialRampToValueAtTime(0.0001, s + 0.26);
+        o.connect(g); g.connect(ac.destination); o.start(s); o.stop(s + 0.28);
+      });
+    } catch (e) {}
+  }
+  function showRemind(test) {
+    var left = Math.max(0, TARGET - todayCount());
+    $('remindSub').textContent = left > 0 ? 'আজ আর ' + bn(left) + ' বাকি আছে।' : 'আজকের লক্ষ্য পূর্ণ হয়েছে।';
+    $('remind').hidden = false;
+    beep();
+    try { if (navigator.vibrate) navigator.vibrate([200, 100, 200]); } catch (e) {}
+    clearTimeout(hideT);
+    hideT = setTimeout(function () { $('remind').hidden = true; }, 90000);
+  }
+  function scheduleRemind() {
+    nextAt = S.set.interval ? Date.now() + S.set.interval * 60000 : 0;
+    renderRemind();
+  }
+  function renderRemind() {
+    var box = $('remChips'); box.textContent = '';
+    INTERVALS.forEach(function (it) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.textContent = it[1];
+      b.setAttribute('aria-pressed', S.set.interval === it[0] ? 'true' : 'false');
+      b.addEventListener('click', function () { unlockAudio(); S.set.interval = it[0]; save(); scheduleRemind(); });
+      box.appendChild(b);
+    });
+    $('remNote').textContent = S.set.interval ? 'পরের রিমাইন্ডার ' + bnTime(nextAt) + ' এর দিকে। বার্তা: "রিয়াদ স্যার, টার্গেট থেকে দূরে চলে যাবেন না"' : 'রিমাইন্ডার বন্ধ আছে।';
+  }
+  setInterval(function () {
+    if (!nextAt) return;
+    var now = Date.now();
+    if (now >= nextAt) {
+      var iv = S.set.interval * 60000;
+      while (nextAt <= now) nextAt += iv;
+      if (todayCount() < TARGET) showRemind(false);
+      renderRemind();
+    }
+  }, 1000);
+
+  /* ---------- colours UI ---------- */
+  function currentTarget() { return S.set.mode === 'all' ? S.set.base : S.set.layers[S.set.active]; }
+  function renderColors() {
+    $('modeAll').setAttribute('aria-pressed', S.set.mode === 'all' ? 'true' : 'false');
+    $('modeEach').setAttribute('aria-pressed', S.set.mode === 'each' ? 'true' : 'false');
+    var lc = $('layerChips'); lc.textContent = '';
+    lc.hidden = S.set.mode !== 'each';
+    [2, 1, 0].forEach(function (i) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip';
+      b.setAttribute('aria-pressed', S.set.active === i ? 'true' : 'false');
+      var d = document.createElement('span'); d.className = 'sd'; d.style.background = S.set.layers[i];
+      b.appendChild(d); b.appendChild(document.createTextNode(LAYER_NAMES[i]));
+      b.addEventListener('click', function () { S.set.active = i; save(); renderColors(); });
+      lc.appendChild(b);
+    });
+    var cur = currentTarget().toLowerCase();
+    var sw = $('swatches'); sw.textContent = '';
+    PALETTE.forEach(function (p) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'sw'; b.style.background = p[1];
+      b.setAttribute('aria-label', p[0]); b.title = p[0];
+      b.setAttribute('aria-pressed', cur === p[1].toLowerCase() ? 'true' : 'false');
+      b.addEventListener('click', function () { applyColor(p[1]); });
+      sw.appendChild(b);
+    });
+    $('customColor').value = currentTarget().toLowerCase();
+    paintColors();
+  }
+  function applyColor(hex) {
+    if (S.set.mode === 'all') S.set.base = hex; else S.set.layers[S.set.active] = hex;
+    save(); renderColors();
+  }
+
+  /* ---------- theme ---------- */
+  function renderTheme() {
+    var dark = S.set.theme === 'dark';
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    $('themeTxt').textContent = dark ? 'আলো মোড' : 'ডার্ক মোড';
+    $('themeBtn').setAttribute('aria-label', dark ? 'আলো মোড চালু করুন' : 'ডার্ক মোড চালু করুন');
+    $('themeIcon').setAttribute('d', dark
+      ? 'M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'
+      : 'M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z');
+  }
+
+  /* ---------- cloud backup (optional) ---------- */
+  var cloudRef = null, cloudOn = false, pushing = false;
+  function cloudNote() {
+    $('saveNote').textContent = cloudOn
+      ? 'ডেটা এই ফোনে সংরক্ষিত হয় এবং আপনার অ্যাকাউন্টেও ব্যাকআপ হয়।'
+      : 'ডেটা এই ফোনের ব্রাউজারে সংরক্ষিত হয়। ব্রাউজারের সাইট ডেটা মুছলে রেকর্ড চলে যেতে পারে।';
+  }
+  function scheduleCloud() {
+    if (!cloudRef) return;
+    clearTimeout(cloudTimer);
+    cloudTimer = setTimeout(pushCloud, 4000);
+  }
+  async function pushCloud() {
+    if (!cloudRef || pushing) return;
+    clearTimeout(cloudTimer);
+    pushing = true;
+    try { await cloudRef.set({ s: JSON.stringify(S), t: S.t }); if (!cloudOn) { cloudOn = true; cloudNote(); } }
+    catch (e) { if (cloudOn) { cloudOn = false; cloudNote(); } }
+    pushing = false;
+  }
+  function withTimeout(p, ms) { return Promise.race([p, new Promise(function (_, rej) { setTimeout(function () { rej(new Error('timeout')); }, ms); })]); }
+  async function initCloud() {
+    try {
+      if (!window.claude || !window.claude.use) return;
+      var user = await withTimeout(window.claude.use('user'), 10000);
+      var db = await withTimeout(window.claude.use('db'), 10000);
+      if (!user || !db) return;
+      var id = await user.id();
+      if (!id) return;
+      var ref = db.collection('data/users/' + id).doc('noor-patro');
+      var snap = await withTimeout(ref.get(), 10000);
+      if (snap.exists) {
+        var d = snap.data() || {}, remote = null;
+        try { remote = normalize(JSON.parse(d.s)); } catch (e) {}
+        if (remote && (Number(d.t) || 0) > S.t) {
+          S = remote; S.t = Number(d.t) || 0; persistLocal();
+          renderTheme(); renderCount(false); renderRecords(); renderColors(); renderRemind(); scheduleRemind();
+          $('langSel').value = S.set.lang;
+        }
+      }
+      cloudRef = ref;
+      var hasData = Object.keys(S.days).length > 0;
+      if (!snap.exists && hasData) await pushCloud();
+      else if (snap.exists && S.t > (Number((snap.data() || {}).t) || 0)) await pushCloud();
+      else { cloudOn = true; cloudNote(); }
+    } catch (e) { /* offline or signed out: local storage only */ }
+  }
+
+  /* ---------- wiring ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-add]'), function (b) {
+    b.addEventListener('click', function () { add(parseInt(b.getAttribute('data-add'), 10), 'manual'); });
+  });
+  $('undoBtn').addEventListener('click', function () {
+    if (!undo.length) return;
+    var v = undo.pop();
+    add(-v, 'undo');
+    renderUndo();
+  });
+  $('amtAdd').addEventListener('click', function () { amtDo(1); });
+  $('amtSub').addEventListener('click', function () { amtDo(-1); });
+  $('amtIn').addEventListener('keydown', function (e) { if (e.key === 'Enter') amtDo(1); });
+  $('dayMore').addEventListener('click', function () { listAll = true; renderList(); });
+  $('pastSave').addEventListener('click', savePast);
+  $('pastDate').max = todayKey();
+  $('voiceBtn').addEventListener('click', function () { unlockAudio(); if (listening) stopVoice(); else startVoice(); });
+  $('langSel').addEventListener('change', function () {
+    S.set.lang = this.value; save();
+    if (listening) { try { if (rec) { rec.onend = null; rec.abort(); } } catch (e) {} clearTimeout(restartT); startVoice(); }
+  });
+  $('modeAll').addEventListener('click', function () { S.set.mode = 'all'; save(); renderColors(); });
+  $('modeEach').addEventListener('click', function () { S.set.mode = 'each'; save(); renderColors(); });
+  $('customColor').addEventListener('input', function () { applyColorLive(this.value); });
+  var cTimer = 0;
+  function applyColorLive(hex) {
+    if (S.set.mode === 'all') S.set.base = hex; else S.set.layers[S.set.active] = hex;
+    paintColors();
+    clearTimeout(cTimer);
+    cTimer = setTimeout(function () { save(); renderColors(); }, 400);
+  }
+  $('themeBtn').addEventListener('click', function () { S.set.theme = S.set.theme === 'dark' ? 'light' : 'dark'; save(); renderTheme(); });
+  $('wlSwitch').addEventListener('click', function () { setWake(!wlWanted); });
+  $('remindOk').addEventListener('click', function () { $('remind').hidden = true; clearTimeout(hideT); });
+  $('remTest').addEventListener('click', function () { unlockAudio(); showRemind(true); });
+
+  /* ---------- boot ---------- */
+  $('langSel').value = S.set.lang;
+  renderTheme();
+  renderDate();
+  renderCount(false);
+  renderRecords();
+  renderColors();
+  renderRemind();
+  renderWake();
+  renderUndo();
+  cloudNote();
+  scheduleRemind();
+  initCloud();
+})();
+</script>
+
+</body>
+</html>
